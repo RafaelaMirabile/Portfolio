@@ -1,5 +1,4 @@
 import { Html, useProgress } from '@react-three/drei';
-import { color } from 'framer-motion';
 import React from 'react';
 
 const Loader = () => {
