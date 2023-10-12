@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import CanvasLoader from '../Loader';
 
+
 const Terrain = () => {
   const canvasRef = useRef();
 
@@ -17,9 +18,9 @@ const Terrain = () => {
 
     // Texture Loader
     const loader = new THREE.TextureLoader();
-    const texture = loader.load('src/assets/texture.jpg');
-    const heigth = loader.load('src/assets/heigth.jpg');
-    const alpha = loader.load('src/assets/alpha.jpg')
+    const texture = loader.load('./alphaMap_terrain/textureImg.jpg');
+    const heigth = loader.load('./alphaMap_terrain/heigthImg.jpg');
+    const alpha = loader.load('./alphaMap_terrain/alphaImg.jpg')
 
     // Materials
     const material = new THREE.MeshStandardMaterial({
