@@ -1,7 +1,7 @@
 import React from 'react';
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas"
 import { motion } from "framer-motion"
+import Terrain from './canvas/AlphaMap';
 
 
 const Hero = () => {
@@ -17,12 +17,11 @@ const Hero = () => {
           <p className={`${styles.heroSubText} mt-2`}> I develop web applications <br className='sm:block hidden' /></p>
         </div>
       </div>
-      <ComputersCanvas />
-
+      <Terrain/>
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center '>
         <a href='#about'>
           <div className='w-[35px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
-            <motion.dev
+            <motion.div
               animate={{
                 y: [0, 16, 0]
               }}
@@ -36,7 +35,6 @@ const Hero = () => {
           </div>
         </a>
       </div>
-
     </section>
   )
 }
