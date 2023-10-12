@@ -51,6 +51,7 @@ const Terrain = () => {
       height: window.innerHeight,
     };
 
+    //automatically handle resizing.
     window.addEventListener('resize', () => {
       // Update sizes
       sizes.width = window.innerWidth;
@@ -66,21 +67,19 @@ const Terrain = () => {
     });
 
     // Camera
-    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
-    camera.position.x = 0;
-    camera.position.y = 0;
-    camera.position.z = 4;
+    const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 50);
+    camera.position.set(0, 0, 4)
     scene.add(camera);
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({
       canvas,
+      antialias: true
     });
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     // Animate
-
     document.addEventListener('mousemove', animateTerrain)
     let mouseY = 0;
     function animateTerrain(event) {
