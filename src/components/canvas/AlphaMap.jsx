@@ -2,7 +2,6 @@ import React, { Suspense, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import CanvasLoader from '../Loader';
 
-
 const Terrain = () => {
   const canvasRef = useRef();
 
@@ -37,7 +36,7 @@ const Terrain = () => {
     const plane = new THREE.Mesh(geometry, material);
     scene.add(plane);
     plane.rotation.x = 11.3;
-    plane.position.set(2, -0.5, 0);
+    plane.position.set(0, -1, 0)
 
     // Lights
     const pointLight = new THREE.PointLight('#915EFF', 7);
